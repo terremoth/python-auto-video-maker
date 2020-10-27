@@ -1,18 +1,17 @@
-from choicer import choicer
+#  -*- coding: utf-8 -*-
+
+from robots.text import robot as text_robot
+from robots.user_input import *
+
+content = {}
 
 def start():
 
-	def askAndReturnSearchTerm():
-		return input("Type a Wikipedia search term: ")
-		
-	def askAndReturnPrefix():
-		prefixes = ['Who is', 'What is', 'The history of']
-		return choicer(prefixes)
-					
-	content = {}
 	content["searchTerm"] = askAndReturnSearchTerm()	
 	content["prefix"] = askAndReturnPrefix()	
+	content = text_robot(content)	
 	
+
 	print(content)
 
 start()
